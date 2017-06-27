@@ -7,9 +7,9 @@ end
 
 gem "rails", "~> 5.1.1"
 gem "bootstrap-sass"
-gem "faker",          "1.7.3"
+gem "faker", "1.7.3"
 gem "bootstrap-will_paginate", "~> 1.0"
-gem "bcrypt-ruby", "3.1.5", :require => "bcrypt"
+gem "bcrypt-ruby", "3.1.5", require: "bcrypt"
 gem "puma", "~> 3.7"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
@@ -29,6 +29,14 @@ group :development, :test do
   gem "minitest-reporters",       "1.1.14"
   gem "guard",                    "2.13.0"
   gem "guard-minitest",           "2.4.4"
+
+  gem 'pronto'
+  gem "pronto-rubocop", require: false
+  gem "pronto-flay", require: false
+  gem "pronto-brakeman", require: false
+  gem "pronto-rails_best_practices", require: false
+  gem "pronto-reek", require: false
+  gem "pronto-eslint", require: false
 end
 
 group :development do
@@ -41,13 +49,6 @@ end
 
 group :production do
   gem "pg"
-end
-
-group :test do
-  gem "rubocop"
-  gem "rubocop-checkstyle_formatter"
-  gem "saddler"
-  gem "saddler-reporter-github"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
